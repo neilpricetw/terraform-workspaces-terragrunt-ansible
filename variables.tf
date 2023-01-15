@@ -24,3 +24,23 @@ variable "environment_owner" {
 variable "allowed_ips" {
     type = list
 }
+
+variable "VPC_cidr" {
+  type = string
+}
+
+variable "subnet1_cidr" {
+  type = string
+}
+
+variable "subnet2_cidr" {
+  type = string
+}
+
+variable "subnet3_cidr" {
+  type = string
+}
+
+variable "subnet4_cidr" {
+  type = string
+}

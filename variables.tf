@@ -5,12 +5,10 @@ variable "region" {
 
 variable "prefix" { 
     type = string 
-    default = "terraform-workspaces-terragrunt-ansible-test"
 }
 
 variable "tech_owner" { 
-    type = string 
-    default = "neil.price@thoughtworks.com.au"    
+    type = string    
 }
 
 variable "environment" { 

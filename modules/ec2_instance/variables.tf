@@ -18,6 +18,14 @@ variable "environment_owner" {
     type = string 
 }
 
-variable "allowed_ips" {
-    type = list
+variable "ec2_instance_type" { 
+    type = string 
+}
+
+variable "root_volume_size" { 
+    type = string 
+}
+
+variable "s3_bucket_name" { 
+    type = string 
 }

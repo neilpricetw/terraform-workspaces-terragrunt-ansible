@@ -19,7 +19,7 @@ variable "environment_owner" {
     type = string 
 }
 
-variable "allowed_ips" {
+variable "allowed_ips_to_s3_bucket" {
     type = list
 }
 
@@ -41,4 +41,12 @@ variable "subnet3_cidr" {
 
 variable "subnet4_cidr" {
   type = string
+}
+
+variable "ec2_instance_type" { 
+    type = string 
+}
+
+variable "root_volume_size" { 
+    type = string 
 }

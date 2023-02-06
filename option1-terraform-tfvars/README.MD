@@ -10,34 +10,38 @@ Creating and destroying the environments:
 
 ##### Dev 
 ```
-- terraform init
-- terraform apply -var-file=terraform-dev.tfvars -auto-approve
+terraform init
+terraform plan -var-file=terraform-dev.tfvars -var-file=non-prod.tfvars
+terraform apply -var-file=terraform-dev.tfvars -var-file=non-prod.tfvars -auto-approve
 
-- terraform destroy -var-file=terraform-dev.tfvars -auto-approve
+terraform destroy -var-file=terraform-dev.tfvars -var-file=non-prod.tfvars -auto-approve
 ```
 
 ##### Test
 ```
-- terraform init
-- terraform apply -var-file=terraform-test.tfvars -auto-approve
+terraform init
+terraform plan -var-file=terraform-test.tfvars -var-file=non-prod.tfvars
+terraform apply -var-file=terraform-test.tfvars -var-file=non-prod.tfvars -auto-approve
 
-- terraform destroy -var-file=terraform-test.tfvars -auto-approve
+terraform destroy -var-file=terraform-test.tfvars -var-file=non-prod.tfvars -auto-approve
 ```
 
 ##### Uat
 ```
-- terraform init
-- terraform apply -var-file=terraform-uat.tfvars -auto-approve
+terraform init
+terraform plan -var-file=terraform-uat.tfvars -var-file=non-prod.tfvars
+terraform apply -var-file=terraform-uat.tfvars -var-file=non-prod.tfvars -auto-approve
 
-- terraform destroy -var-file=terraform-uat.tfvars -auto-approve
+terraform destroy -var-file=terraform-uat.tfvars -var-file=non-prod.tfvars -auto-approve
 ```
 
 ##### Prod
 ```
-- terraform init
-- terraform apply -var-file=terraform-prod.tfvars -auto-approve
+terraform init
+terraform plan -var-file=terraform-prod.tfvars
+terraform apply -var-file=terraform-prod.tfvars -auto-approve
 
-- terraform destroy -var-file=terraform-prod.tfvars -auto-approve
+terraform destroy -var-file=terraform-prod.tfvars -auto-approve
 ```
 
 - Pros

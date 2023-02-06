@@ -3,7 +3,7 @@
 There are multiple ways to configure environment settings in Terraform some are better than others.  This repo evaluates four possible methods with an aim of writing [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) easy to maintain code. 
 
 
-## Option 3: Terragrunt
+## Option 2: Terrafrom Workspaces
 
 Creating and destroying the environments:
 
@@ -48,12 +48,11 @@ Creating and destroying the environments:
 - terraform destroy -var-file=terraform-prod.tfvars -auto-approve
 ```
 
-- Pros 
-    - Easier to see what is deployed where
-    - Can configure separate backends
-    - Can configure separate versions
+- Pros
+    - Workspaces is native to Terraform
+    - One copy of your code	
+    - Works with Terraform Cloud
 - Cons
-    - Need an extra tool outside of Terraform to learn
-    - Duplication of folders and files
-    - Config spread out across multiple poorly named files (terragrunt.hcl)
-    - Not natively supported with Terraform Cloud
+    - Not always easy to know what is deployed where (can’t see the environments in the code itself)
+    - One backend for all, no isolation between environments (This is one of the reasons that even HashiCorp’s own documentation does not recommend using Terraform workspaces for managing environments)
+    - Unable to run version 1.2 in dev and 1.1 in test, all versions have to be the same therefore it’s not immutable infrastructure

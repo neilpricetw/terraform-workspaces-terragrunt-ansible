@@ -3,15 +3,13 @@
 There are multiple ways to configure environment settings in Terraform some are better than others.  This repo evaluates four possible methods with an aim of writing [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) easy to maintain code. 
 
 
-## Option 3: Terragrunt
+## Option 1: Terrafrom TFVars
 
 Creating and destroying the environments:
 
 
 ##### Dev 
 ```
-- terraform workspaces new dev
-- terraform workspaces select dev
 - terraform init
 - terraform apply -var-file=terraform-dev.tfvars -auto-approve
 
@@ -20,8 +18,6 @@ Creating and destroying the environments:
 
 ##### Test
 ```
-- terraform workspaces new test
-- terraform workspaces select test
 - terraform init
 - terraform apply -var-file=terraform-test.tfvars -auto-approve
 
@@ -30,8 +26,6 @@ Creating and destroying the environments:
 
 ##### Uat
 ```
-- terraform workspaces new uat
-- terraform workspaces select uat
 - terraform init
 - terraform apply -var-file=terraform-uat.tfvars -auto-approve
 
@@ -40,20 +34,19 @@ Creating and destroying the environments:
 
 ##### Prod
 ```
-- terraform workspaces new prod
-- terraform workspaces select prod
 - terraform init
 - terraform apply -var-file=terraform-prod.tfvars -auto-approve
 
 - terraform destroy -var-file=terraform-prod.tfvars -auto-approve
 ```
 
-- Pros 
-    - Easier to see what is deployed where
-    - Can configure separate backends
-    - Can configure separate versions
+- Pros
+    - TFVars is native to Terraform
+    - One copy of your code	
+    - Easier to know what is deployed where
+    - Works with Terraform Cloud
 - Cons
-    - Need an extra tool outside of Terraform to learn
-    - Duplication of folders and files
-    - Config spread out across multiple poorly named files (terragrunt.hcl)
-    - Not natively supported with Terraform Cloud
+    - When re-running Terraform for a different environments you destroy one to create the other as they share the same state file
+        - You could avoid this by scripting a dynamic change to backend.tf in the CI/CD process, but then it's not reflected in code
+        - You could have a branch per environment but that would create a lot of duplication and extra overhead plus promoting changes from one environment to another could be error prone too
+    - Unable to run version 1.2 in dev and 1.1 in test, all versions have to be the same therefore it’s not immutable infrastructure

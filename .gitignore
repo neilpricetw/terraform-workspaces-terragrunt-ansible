@@ -1,0 +1,11 @@
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+*.terraform*
+
+### macOS template
+# General
+.DS_Store
+.AppleDouble
+.LSOverride

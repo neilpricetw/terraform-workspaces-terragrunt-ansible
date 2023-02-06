@@ -3,7 +3,7 @@
 There are multiple ways to configure environment settings in Terraform some are better than others.  This repo evaluates four possible methods with an aim of writing [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) easy to maintain code. 
 
 
-## Option 3: Terragrunt
+## Option 4: Terragrunt and Ansible
 
 Creating and destroying the environments:
 
@@ -48,12 +48,12 @@ Creating and destroying the environments:
 - terraform destroy -var-file=terraform-prod.tfvars -auto-approve
 ```
 
-- Pros 
-    - Easier to see what is deployed where
-    - Can configure separate backends
-    - Can configure separate versions
+- Pros
+    - Less duplication of folders and files
+    - Config for each environment easy to find
+    - Adds greater flexibility with if else statement capabilities
+    - Less duplication when using multiple providers
 - Cons
     - Need an extra tool outside of Terraform to learn
-    - Duplication of folders and files
-    - Config spread out across multiple poorly named files (terragrunt.hcl)
+    - Could add greater complexity to understand the code base
     - Not natively supported with Terraform Cloud

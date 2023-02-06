@@ -1,4 +1,12 @@
 fileignoreconfig: 
+- filename: option1-terraform-tfvars/.terraform.lock.hcl
+  checksum: 96d83fce894dfa5b31ab1f11e9a694e5d9ee0531e2175b8cd638339fccbaf0b1
+- filename: option1-terraform-tfvars/.terraform/modules/modules.json
+  checksum: e4c157fb71ec82c1ec50eb03e504806ef11f5d30c4116416a3129467402f36fc
+- filename: option1-terraform-tfvars/.terraform/terraform.tfstate
+  checksum: bbad27105c865f105574103450b2c7320dc92b8585b35ad6bf5c2fd4118c0a37
+- filename: option1-terraform-tfvars/backend.tf
+  checksum: 4210ca17f6697b64618f110288695a37fc4127e9033ea318f5e00193cb00d695
 allowed_patterns:
 -     key =
 version: ""

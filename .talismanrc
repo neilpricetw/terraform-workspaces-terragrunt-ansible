@@ -1,6 +1,4 @@
-fileignoreconfig:
-- filename: .terraform.lock.hcl
-  checksum: 7166632a4627691a9a2966ca49548b72c662567c6802961d86f01562fb4d825a
-- filename: backend.tf
-  checksum: 0802d6428fdbe0bbba6063a9bc8ff3c9a2c02eb7de6bab2d8c8379c5cd0ad205  
+fileignoreconfig: 
+allowed_patterns:
+-     key =
 version: ""

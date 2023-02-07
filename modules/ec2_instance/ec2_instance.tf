@@ -27,7 +27,7 @@ data "aws_vpc" "vpc" {
 data "aws_subnet" "subnet_public_1" {
   filter {
     name   = "tag:Name"
-    values = [ "${var.prefix}" ]
+    values = [ "${var.prefix}-public-subnet-1" ]
   }
 }
 

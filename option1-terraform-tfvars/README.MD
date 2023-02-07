@@ -1,14 +1,9 @@
-# Comparing Options for Handling Environment Config in Terraform and remaining DRY
-
-There are multiple ways to configure environment settings in Terraform some are better than others.  This repo evaluates four possible methods with an aim of writing [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) easy to maintain code. 
-
-
-## Option 1: Terrafrom TFVars
+# Option 1: Terrafrom TFVars
 
 Creating and destroying the environments:
 
 
-##### Dev 
+### Dev 
 ```
 terraform init
 terraform plan -var-file=terraform-dev.tfvars -var-file=non-prod.tfvars
@@ -17,7 +12,7 @@ terraform apply -var-file=terraform-dev.tfvars -var-file=non-prod.tfvars -auto-a
 terraform destroy -var-file=terraform-dev.tfvars -var-file=non-prod.tfvars -auto-approve
 ```
 
-##### Test
+### Test
 ```
 terraform init
 terraform plan -var-file=terraform-test.tfvars -var-file=non-prod.tfvars
@@ -26,7 +21,7 @@ terraform apply -var-file=terraform-test.tfvars -var-file=non-prod.tfvars -auto-
 terraform destroy -var-file=terraform-test.tfvars -var-file=non-prod.tfvars -auto-approve
 ```
 
-##### Uat
+### Uat
 ```
 terraform init
 terraform plan -var-file=terraform-uat.tfvars -var-file=non-prod.tfvars
@@ -35,7 +30,7 @@ terraform apply -var-file=terraform-uat.tfvars -var-file=non-prod.tfvars -auto-a
 terraform destroy -var-file=terraform-uat.tfvars -var-file=non-prod.tfvars -auto-approve
 ```
 
-##### Prod
+### Prod
 ```
 terraform init
 terraform plan -var-file=terraform-prod.tfvars

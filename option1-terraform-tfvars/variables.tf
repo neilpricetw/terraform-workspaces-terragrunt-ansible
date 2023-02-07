@@ -50,3 +50,15 @@ variable "ec2_instance_type" {
 variable "root_volume_size" { 
     type = string 
 }
+
+variable "db_instance_class" { 
+    type = string 
+}
+
+variable "db_name" { 
+    type = string 
+}
+
+variable "db_user" {
+    type = string 
+}

@@ -9,4 +9,5 @@ fileignoreconfig:
   checksum: 4210ca17f6697b64618f110288695a37fc4127e9033ea318f5e00193cb00d695
 allowed_patterns:
 -     key =
+- password
 version: ""

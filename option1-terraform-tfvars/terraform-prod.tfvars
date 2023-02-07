@@ -14,3 +14,8 @@ allowed_ips_to_s3_bucket = [ "7.7.7.7", "8.8.8.8" ]
 # EC2
 ec2_instance_type = "t3.large"
 root_volume_size = 10
+
+# RDS
+db_instance_class   = "db.m5.large"
+db_name             = "mydatabase"
+db_user             = "root"

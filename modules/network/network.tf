@@ -15,7 +15,12 @@ resource "aws_subnet" "subnet_public_1" {
   map_public_ip_on_launch = "true" 
   availability_zone       = format("%sa", var.region)
   
-  tags = local.common_tags
+  tags = {
+    Name = format("%s-public-subnet-1", var.prefix)
+    Environment = var.environment
+    EnvironmentOwner = var.environment_owner        
+    TechOwner = var.tech_owner     
+  }
 }
 
 
@@ -25,7 +30,12 @@ resource "aws_subnet" "subnet_public_2" {
   map_public_ip_on_launch = "true" 
   availability_zone       = format("%sb", var.region)
 
-  tags = local.common_tags
+  tags = {
+    Name = format("%s-public-subnet-2", var.prefix)
+    Environment = var.environment
+    EnvironmentOwner = var.environment_owner        
+    TechOwner = var.tech_owner     
+  }
 }
 
 
@@ -35,7 +45,12 @@ resource "aws_subnet" "subnet_private_1" {
   map_public_ip_on_launch = "false" 
   availability_zone       = format("%sa", var.region)
 
-  tags = local.common_tags
+  tags = {
+    Name = format("%s-private-subnet-1", var.prefix)
+    Environment = var.environment
+    EnvironmentOwner = var.environment_owner        
+    TechOwner = var.tech_owner     
+  }
 }
 
 
@@ -45,5 +60,10 @@ resource "aws_subnet" "subnet_private_2" {
   map_public_ip_on_launch = "false" 
   availability_zone       = format("%sb", var.region)
 
-  tags = local.common_tags
+  tags = {
+    Name = format("%s-private-subnet-2", var.prefix)
+    Environment = var.environment
+    EnvironmentOwner = var.environment_owner        
+    TechOwner = var.tech_owner     
+  }
 }

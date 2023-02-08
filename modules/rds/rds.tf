@@ -1,4 +1,4 @@
-data "aws_vpc" "vpc" {
+/*data "aws_vpc" "vpc" {
   filter {
     name   = "tag:Name"
     values = [ "${var.prefix}" ]
@@ -17,7 +17,7 @@ data "aws_subnet" "subnet_private_2" {
     name   = "tag:Name"
     values = [ "${var.prefix}-private-subnet-2" ]
   }
-}
+}*/
 
 resource "random_string" "db-password" {
   length  = 32
@@ -42,18 +42,18 @@ resource "aws_db_instance" "database" {
 
 
 resource "aws_db_subnet_group" "RDS_subnet_grp" { 
-  subnet_ids = ["${data.aws_subnet.subnet_private_1.id}", "${data.aws_subnet.subnet_private_2.id}"] 
+  subnet_ids = ["${var.subnet_private_1_id}", "${var.subnet_private_2_id}"] 
 }
 
 
 resource "aws_security_group" "rds" {
   name = "rds-sg"
-  vpc_id = data.aws_vpc.vpc.id
+  vpc_id = var.vpc_id
   ingress {
     from_port       = 3306
     to_port         = 3306
     protocol        = "tcp"
-    cidr_blocks = ["${var.VPC_cidr}"]
+    cidr_blocks = ["${var.vpc_cidr}"]
   }
 
   egress {

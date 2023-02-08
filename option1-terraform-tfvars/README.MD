@@ -30,6 +30,15 @@ terraform apply -var-file=terraform-uat.tfvars -var-file=non-prod.tfvars -auto-a
 terraform destroy -var-file=terraform-uat.tfvars -var-file=non-prod.tfvars -auto-approve
 ```
 
+### DR
+```
+terraform init
+terraform plan -var-file=terraform-dr.tfvars -var-file=non-prod.tfvars
+terraform apply -var-file=terraform-dr.tfvars -var-file=non-prod.tfvars -auto-approve
+
+terraform destroy -var-file=terraform-dr.tfvars -var-file=non-prod.tfvars -auto-approve
+```
+
 ### Prod
 ```
 terraform init

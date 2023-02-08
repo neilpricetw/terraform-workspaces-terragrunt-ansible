@@ -1,7 +1,7 @@
 module "network_us_east_1" { 
     source              = "../modules/network"
 
-    VPC_cidr            = var.VPC_cidr
+    vpc_cidr            = var.vpc_cidr
     subnet1_cidr        = var.subnet1_cidr
     subnet2_cidr        = var.subnet2_cidr
     subnet3_cidr        = var.subnet3_cidr
@@ -18,7 +18,7 @@ module "network_us_east_1" {
 }
 
 module "s3_bucket_us_east_1" {
-    source              = "../modules/s3-bucket"
+    source              = "../modules/s3_bucket"
 
     prefix              = var.prefix
     region              = var.region
@@ -43,7 +43,10 @@ module "rds_us_east_1" {
     db_instance_class   = var.db_instance_class
     db_name             = var.db_name
     db_user             = var.db_user
-    VPC_cidr            = var.VPC_cidr 
+    vpc_cidr            = var.vpc_cidr 
+    vpc_id              = module.network_us_east_1.vpc_id
+    subnet_private_1_id = module.network_us_east_1.subnet_private_1_id
+    subnet_private_2_id = module.network_us_east_1.subnet_private_2_id
 
     depends_on = [
         module.network_us_east_1
@@ -66,6 +69,8 @@ module "ec2_instance_us_east_1" {
     // EC2
     ec2_instance_type   = var.ec2_instance_type    
     root_volume_size    = var.root_volume_size  
+    vpc_id              = module.network_us_east_1.vpc_id
+    subnet_public_1_id = module.network_us_east_1.subnet_public_1_id    
     s3_bucket_name      = module.s3_bucket_us_east_1.bucket_name
   
     depends_on = [
@@ -89,7 +94,7 @@ module "network_us_east_2" {
     count               = local.is_dr ? 1 : 0
     source              = "../modules/network"
 
-    VPC_cidr            = var.VPC_cidr
+    vpc_cidr            = var.vpc_cidr
     subnet1_cidr        = var.subnet1_cidr
     subnet2_cidr        = var.subnet2_cidr
     subnet3_cidr        = var.subnet3_cidr
@@ -107,7 +112,7 @@ module "network_us_east_2" {
 
 module "s3_bucket_us_east_2" {
     count               = local.is_dr ? 1 : 0    
-    source              = "../modules/s3-bucket"
+    source              = "../modules/s3_bucket"
 
     prefix              = var.prefix
     region              = var.region
@@ -133,7 +138,10 @@ module "rds_us_east_2" {
     db_instance_class   = var.db_instance_class
     db_name             = var.db_name
     db_user             = var.db_user
-    VPC_cidr            = var.VPC_cidr 
+    vpc_cidr            = var.vpc_cidr 
+    vpc_id              = module.network_us_east_1.vpc_id
+    subnet_private_1_id = module.network_us_east_1.subnet_private_1_id
+    subnet_private_2_id = module.network_us_east_1.subnet_private_2_id    
 
     depends_on = [
         module.network_us_east_2
@@ -157,6 +165,8 @@ module "ec2_instance_us_east_2" {
     // EC2
     ec2_instance_type   = var.ec2_instance_type    
     root_volume_size    = var.root_volume_size  
+    vpc_id              = tolist([ for wp in module.network_us_east_2 : wp.vpc_id])[0]
+    subnet_public_1_id  = tolist([ for wp in module.network_us_east_2 : wp.subnet_public_1_id])[0]   
     s3_bucket_name      = tolist([ for wp in module.s3_bucket_us_east_2 : wp.bucket_name])[0]
     
     depends_on = [

@@ -3,7 +3,7 @@ environment = "Test"
 environment_owner = "internal-testers@mycompany.com.au"
 
 // Network
-VPC_cidr     = "10.1.0.0/16"     
+vpc_cidr     = "10.1.0.0/16"     
 subnet1_cidr = "10.1.1.0/24"     
 subnet2_cidr = "10.1.2.0/24"     
 subnet3_cidr = "10.1.3.0/24"  

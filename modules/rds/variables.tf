@@ -30,6 +30,18 @@ variable "db_user" {
     type = string 
 }
 
-variable "VPC_cidr" {
+variable "vpc_cidr" {
+    type = string 
+}
+
+variable "vpc_id" { 
+    type = string 
+}
+
+variable "subnet_private_1_id" { 
+    type = string 
+}
+
+variable "subnet_private_2_id" { 
     type = string 
 }

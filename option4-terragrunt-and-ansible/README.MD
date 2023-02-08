@@ -10,42 +10,42 @@ Creating and destroying the environments:
 
 ##### Dev 
 ```
-- terraform workspaces new dev
-- terraform workspaces select dev
-- terraform init
-- terraform apply -var-file=terraform-dev.tfvars -auto-approve
+terraform workspaces new dev
+terraform workspaces select dev
+terraform init
+terraform apply -var-file=terraform-dev.tfvars -auto-approve
 
-- terraform destroy -var-file=terraform-dev.tfvars -auto-approve
+terraform destroy -var-file=terraform-dev.tfvars -auto-approve
 ```
 
 ##### Test
 ```
-- terraform workspaces new test
-- terraform workspaces select test
-- terraform init
-- terraform apply -var-file=terraform-test.tfvars -auto-approve
+terraform workspaces new test
+terraform workspaces select test
+terraform init
+terraform apply -var-file=terraform-test.tfvars -auto-approve
 
-- terraform destroy -var-file=terraform-test.tfvars -auto-approve
+terraform destroy -var-file=terraform-test.tfvars -auto-approve
 ```
 
 ##### Uat
 ```
-- terraform workspaces new uat
-- terraform workspaces select uat
-- terraform init
-- terraform apply -var-file=terraform-uat.tfvars -auto-approve
+terraform workspaces new uat
+terraform workspaces select uat
+terraform init
+terraform apply -var-file=terraform-uat.tfvars -auto-approve
 
-- terraform destroy -var-file=terraform-uat.tfvars -auto-approve
+terraform destroy -var-file=terraform-uat.tfvars -auto-approve
 ```
 
 ##### Prod
 ```
-- terraform workspaces new prod
-- terraform workspaces select prod
-- terraform init
-- terraform apply -var-file=terraform-prod.tfvars -auto-approve
+terraform workspaces new prod
+terraform workspaces select prod
+terraform init
+terraform apply -var-file=terraform-prod.tfvars -auto-approve
 
-- terraform destroy -var-file=terraform-prod.tfvars -auto-approve
+terraform destroy -var-file=terraform-prod.tfvars -auto-approve
 ```
 
 - Pros

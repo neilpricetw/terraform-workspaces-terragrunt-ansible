@@ -16,7 +16,7 @@ data "aws_ami" "ubuntu" {
 }
 
 
-data "aws_vpc" "vpc" {
+/*data "aws_vpc" "vpc" {
   filter {
     name   = "tag:Name"
     values = [ "${var.prefix}" ]
@@ -29,13 +29,13 @@ data "aws_subnet" "subnet_public_1" {
     name   = "tag:Name"
     values = [ "${var.prefix}-public-subnet-1" ]
   }
-}
+}*/
 
 
 resource "aws_instance" "ec2_instance" {
   ami                    = data.aws_ami.ubuntu.id
   instance_type          = var.ec2_instance_type
-  subnet_id              = data.aws_subnet.subnet_public_1.id
+  subnet_id              = var.subnet_public_1_id
   vpc_security_group_ids = ["${aws_security_group.ec2.id}"]
   iam_instance_profile   = aws_iam_instance_profile.ec2_profile.name 
   user_data              = templatefile("${path.module}/templates/ec2_userdata.tpl", {
@@ -53,7 +53,7 @@ resource "aws_instance" "ec2_instance" {
 
 resource "aws_security_group" "ec2" {
   name = format("%s-ec2-sg", var.prefix)
-  vpc_id = data.aws_vpc.vpc.id
+  vpc_id = var.vpc_id
 
   ingress {
     description = "HTTP"

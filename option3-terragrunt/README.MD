@@ -1,52 +1,58 @@
-# Comparing Options for Handling Environment Config in Terraform and remaining DRY
-
-There are multiple ways to configure environment settings in Terraform some are better than others.  This repo evaluates four possible methods with an aim of writing [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) easy to maintain code. 
-
-
-## Option 3: Terragrunt
+# Option 3: Terragrunt
 
 Creating and destroying the environments:
 
 
-##### Dev 
+### Dev 
 ```
-- terraform workspaces new dev
-- terraform workspaces select dev
-- terraform init
-- terraform apply -var-file=terraform-dev.tfvars -auto-approve
+cd non-prod/us-east-1/dev
+terragrunt init
+terragrunt run-all plan
+terragrunt run-all apply --terragrunt-non-interactive
 
-- terraform destroy -var-file=terraform-dev.tfvars -auto-approve
-```
-
-##### Test
-```
-- terraform workspaces new test
-- terraform workspaces select test
-- terraform init
-- terraform apply -var-file=terraform-test.tfvars -auto-approve
-
-- terraform destroy -var-file=terraform-test.tfvars -auto-approve
+terraform run-all destroy  --terragrunt-non-interactive
 ```
 
-##### Uat
+### Test 
 ```
-- terraform workspaces new uat
-- terraform workspaces select uat
-- terraform init
-- terraform apply -var-file=terraform-uat.tfvars -auto-approve
+cd non-prod/us-east-1/test
+terragrunt init
+terragrunt run-all plan
+terragrunt run-all apply --terragrunt-non-interactive
 
-- terraform destroy -var-file=terraform-uat.tfvars -auto-approve
+terraform run-all destroy  --terragrunt-non-interactive
 ```
 
-##### Prod
+### Uat
 ```
-- terraform workspaces new prod
-- terraform workspaces select prod
-- terraform init
-- terraform apply -var-file=terraform-prod.tfvars -auto-approve
+cd non-prod/us-east-1/uat
+terragrunt init
+terragrunt run-all plan
+terragrunt run-all apply --terragrunt-non-interactive
 
-- terraform destroy -var-file=terraform-prod.tfvars -auto-approve
+terraform run-all destroy  --terragrunt-non-interactive
 ```
+
+### DR
+```
+cd non-prod/us-east-2/dr
+terragrunt init
+terragrunt run-all plan
+terragrunt run-all apply --terragrunt-non-interactive
+
+terraform run-all destroy  --terragrunt-non-interactive
+```
+
+### Prod 
+```
+cd prod/us-east-1/prod
+terragrunt init
+terragrunt run-all plan
+terragrunt run-all apply --terragrunt-non-interactive
+
+terraform run-all destroy  --terragrunt-non-interactive
+```
+
 
 - Pros 
     - Easier to see what is deployed where

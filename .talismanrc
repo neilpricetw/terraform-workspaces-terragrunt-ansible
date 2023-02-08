@@ -7,6 +7,30 @@ fileignoreconfig:
   checksum: bbad27105c865f105574103450b2c7320dc92b8585b35ad6bf5c2fd4118c0a37
 - filename: option1-terraform-tfvars/backend.tf
   checksum: 4210ca17f6697b64618f110288695a37fc4127e9033ea318f5e00193cb00d695
+- filename: option3-terragrunt/non-prod/us-east-1/dev/env.hcl
+  checksum: c3212db05a8011959c0e803c243bc07602a2a31b80e99a5c643b5469865d75d9
+- filename: option3-terragrunt/non-prod/us-east-1/test/env.hcl
+  checksum: 4cde49bc87a0c2e0ecc899cd3b18b43e75908b702457378918bc539f83d5d571
+- filename: option3-terragrunt/non-prod/us-east-1/uat/env.hcl
+  checksum: 20d20fce4042e9d818dcca155392c0ee76cae6da58db663d5f2e28f60ace373b
+- filename: option3-terragrunt/non-prod/us-east-2/dr/env.hcl
+  checksum: e46d647c8f41f02904e5abb099bc6748e84131c91148d26c68f142295a3960b2
+- filename: option3-terragrunt/prod/us-east-1/prod/env.hcl
+  checksum: b37ed9fc91d94c8c93d05766c5960b14f9dacb6b85cc2e3f73bd9b7493bd35c5
+- filename: option3-terragrunt/backend.tf
+  checksum: ec90c8beb417a6fccb2547907eae3320e0bd9c19c3e8dcd0be8f3a64eb011802
+- filename: option3-terragrunt/non-prod/us-east-1/dev/backend.tf
+  checksum: 6f90299c1473264889fd95b6851f1b0f7737b67d4c21cdc774b982eb7d07ba28
+- filename: option3-terragrunt/non-prod/us-east-2/dr/backend.tf
+  checksum: 758daadae1d36010a94da7acaba6a5a37d2ec05ed6342e56a50ea31615d588f1
+- filename: option3-terragrunt/non-prod/us-east-1/test/backend.tf
+  checksum: f0a0c0aaacce58c22870a1ebc7d4a3a9299421b54a1b1ec7c2d7cc9ade98b879
+- filename: option3-terragrunt/prod/us-east-1/prod/backend.tf
+  checksum: a6aa68ed9ca834807408db4c197a40fd8302984139ff5e18b3fe04daa5dd4149
+- filename: option3-terragrunt/non-prod/us-east-1/uat/backend.tf
+  checksum: 82bd23f7b07621add0fd94d4607ff12c29aac5cc454ddac42aa851dc125da1c3
+- filename: option2-terraform-workspaces/backend.tf
+  checksum: b464d856ed45c79ceaf4cca4d5a05d2c1d68de62ae8380ee59186689978ceac1  
 allowed_patterns:
 -     key =
 - password

@@ -23,7 +23,7 @@ variable "allowed_ips_to_s3_bucket" {
     type = list
 }
 
-variable "VPC_cidr" {
+variable "vpc_cidr" {
   type = string
 }
 

@@ -31,6 +31,18 @@ fileignoreconfig:
   checksum: 82bd23f7b07621add0fd94d4607ff12c29aac5cc454ddac42aa851dc125da1c3
 - filename: option2-terraform-workspaces/backend.tf
   checksum: b464d856ed45c79ceaf4cca4d5a05d2c1d68de62ae8380ee59186689978ceac1  
+- filename: option4-terragrunt-and-ansible/ansible/group_vars/env_dev.yaml
+  checksum: bb9da116bf049df7853f226218d8b61ef6a914a49c76f63b456615fc3a70913a
+- filename: option4-terragrunt-and-ansible/ansible/group_vars/env_dr.yaml
+  checksum: b015f616fe1db5258c8b1e622285351d96fe16ebb8083cbcadb2da44773f75f3
+- filename: option4-terragrunt-and-ansible/ansible/group_vars/env_prod.yaml
+  checksum: f712f448c138b64e4e0213ce35f969b6fa53b871214cb54a35a6736dd14f9e67
+- filename: option4-terragrunt-and-ansible/ansible/group_vars/env_test.yaml
+  checksum: 177e024f6b15114dd2dbf1f6ea7b10c6bd603334b426d585af8b9d7d8b535a43
+- filename: option4-terragrunt-and-ansible/ansible/group_vars/env_uat.yaml
+  checksum: 84a6749693282b1d39e533aae299f406d1da2616704fb8371e0728cc3ee86ce2
+- filename: option4-terragrunt-and-ansible/ansible/roles/scaffold_environment/templates/env.j2
+  checksum: 965d9d193cd1bcc7692c21bc0a9c77090c3072612a614c734ef500e030e7fe0d  
 allowed_patterns:
 -     key =
 - password

@@ -1,0 +1,9 @@
+---
+  - name: "Building out the dev environment"
+    hosts: localhost
+    connection: local
+    vars_files:
+      - ../group_vars/env_dev.yaml 
+      - ../group_vars/account_non_prod.yaml
+    roles:
+      - ../roles/scaffold_environment

@@ -10,3 +10,9 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+
+option3-terragrunt/**/backend.tf
+option3-terragrunt/**/provider.tf
+
+option4-terragrunt-and-ansible/non-prod
+option4-terragrunt-and-ansible/prod

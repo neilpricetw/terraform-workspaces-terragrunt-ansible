@@ -1,0 +1,9 @@
+---
+  - name: "Building out the prod environment"
+    hosts: localhost
+    connection: local
+    vars_files:
+      - ../group_vars/env_prod.yaml 
+      - ../group_vars/account_prod.yaml      
+    roles:
+      - ../roles/scaffold_environment

@@ -1,0 +1,87 @@
+---
+
+  - name: Create non-prod directory if it does not exist
+    ansible.builtin.file:
+      path: ../../{{ account }}
+      state: directory
+
+  - name: Copy account template file
+    ansible.builtin.template:
+      src: ../roles/scaffold_environment/templates/account.j2
+      dest: ../../{{ account }}/account.hcl
+
+  - name: Create region directory if it does not exist
+    ansible.builtin.file:
+      path: ../../{{ account }}/{{ region }}
+      state: directory   
+
+  - name: Copy region template file
+    ansible.builtin.template:
+      src: ../roles/scaffold_environment/templates/region.j2
+      dest: ../../{{ account }}/{{ region }}/region.hcl      
+
+  - name: Remove env directory if it exists
+    ansible.builtin.file:
+      path: ../../{{ account }}/{{ region }}/{{ env }}
+      state: absent
+
+  - name: Create env directory if it does not exist
+    ansible.builtin.file:
+      path: ../../{{ account }}/{{ region }}/{{ env }}
+      state: directory   
+
+  - name: Copy env template file
+    ansible.builtin.template:
+      src: ../roles/scaffold_environment/templates/env.j2
+      dest: ../../{{ account }}/{{ region }}/{{ env }}/env.hcl   
+
+  - name: Copy env terragrunt hcl template file
+    ansible.builtin.template:
+      src: ../roles/scaffold_environment/templates/env_terragrunt.j2
+      dest: ../../{{ account }}/{{ region }}/{{ env }}/terragrunt.hcl
+
+  - name: Ensure env level terragrunt.hcl file exists
+    copy:
+      content: ""
+      dest: ../../{{ account }}/{{ region }}/{{ env }}/terragrunt.hcl
+      force: false      
+
+  - name: Create ec2_instance directory if it does not exist
+    ansible.builtin.file:
+      path: ../../{{ account }}/{{ region }}/{{ env }}/ec2_instance
+      state: directory          
+
+  - name: Copy ec2_instance terragrunt hcl file
+    ansible.builtin.template:
+      src: ../roles/scaffold_environment/files/ec2_instance_terragrunt.hcl
+      dest: ../../{{ account }}/{{ region }}/{{ env }}/ec2_instance/terragrunt.hcl 
+
+  - name: Create network directory if it does not exist
+    ansible.builtin.file:
+      path: ../../{{ account }}/{{ region }}/{{ env }}/network
+      state: directory          
+
+  - name: Copy network terragrunt hcl file
+    ansible.builtin.template:
+      src: ../roles/scaffold_environment/files/network_terragrunt.hcl
+      dest: ../../{{ account }}/{{ region }}/{{ env }}/network/terragrunt.hcl  
+
+  - name: Create rds directory if it does not exist
+    ansible.builtin.file:
+      path: ../../{{ account }}/{{ region }}/{{ env }}/rds
+      state: directory          
+
+  - name: Copy rds terragrunt hcl file
+    ansible.builtin.template:
+      src: ../roles/scaffold_environment/files/rds_terragrunt.hcl
+      dest: ../../{{ account }}/{{ region }}/{{ env }}/rds/terragrunt.hcl        
+
+  - name: Create s3_bucket directory if it does not exist
+    ansible.builtin.file:
+      path: ../../{{ account }}/{{ region }}/{{ env }}/s3_bucket
+      state: directory          
+
+  - name: Copy s3_bucket terragrunt hcl file
+    ansible.builtin.template:
+      src: ../roles/scaffold_environment/files/s3_bucket_terragrunt.hcl
+      dest: ../../{{ account }}/{{ region }}/{{ env }}/s3_bucket/terragrunt.hcl   

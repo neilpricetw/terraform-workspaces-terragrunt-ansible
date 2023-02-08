@@ -13,13 +13,13 @@ There are multiple ways to configure environment settings in Terraform.  This re
 
 ### Comparisons
 
-Option 1: [Terrafrom TFVars](option1-terraform-tfvars/README.MD)
+Option 1: [Terrafrom TFVars](option1-terraform-tfvars/)
 
-Option 2: [Terraform Workspaces](option2-terraform-workspaces/README.MD)
+Option 2: [Terraform Workspaces](option2-terraform-workspaces/)
 
-Option 3: [Terragrunt](option3-terragrunt/README.MD)
+Option 3: [Terragrunt](option3-terragrunt/)
 
-Option 4: [Terragrunt and Ansible](option4-terragrunt-and-ansible/README.MD)
+Option 4: [Terragrunt and Ansible](option4-terragrunt-and-ansible/)
 
 
 

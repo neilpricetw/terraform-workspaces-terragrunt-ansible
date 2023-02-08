@@ -23,13 +23,12 @@ Option 3: [Terragrunt](option3-terragrunt/README.MD)
 Option 4: [Terragrunt and Ansible](option4-terragrunt-and-ansible/README.MD)
 
 
-### Conclusion
-
-Tools to run to see how DRY your code is...
 
 
-### Helpful Links
+### Some Useful Links by Terragrunt
 
-https://blog.gruntwork.io/how-to-manage-multiple-environments-with-terraform-using-workspaces-98680d89a03e
-https://blog.gruntwork.io/how-to-manage-multiple-environments-with-terraform-using-branches-875d1a2ee647
-https://blog.gruntwork.io/how-to-manage-multiple-environments-with-terraform-using-terragrunt-2c3e32fc60a8
+[How to manage multiple environments with Terraform using workspaces](https://blog.gruntwork.io/how-to-manage-multiple-environments-with-terraform-using-workspaces-98680d89a03e)
+
+[How to manage multiple environments with Terraform using branches](https://blog.gruntwork.io/how-to-manage-multiple-environments-with-terraform-using-branches-875d1a2ee647)
+
+[How to manage multiple environments with Terraform using Terragrunt](https://blog.gruntwork.io/how-to-manage-multiple-environments-with-terraform-using-terragrunt-2c3e32fc60a8)

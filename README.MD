@@ -1,6 +1,6 @@
 # Comparing Options for Handling Environment Config in Terraform and remaining DRY
 
-There are multiple ways to configure environment settings in Terraform some are better than others.  This repo evaluates four possible methods with an aim of writing [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) easy to maintain code. 
+There are multiple ways to configure environment settings in Terraform.  This repo evaluates four possible methods with an aim of writing [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) easy to maintain code.
 
 
 ## Solution Requirements
@@ -9,7 +9,6 @@ There are multiple ways to configure environment settings in Terraform some are 
 - 4 environments in main region and a DR in a different region
 - The Prod S3 bucket must have 90 day lifecycle policy wheras it's not required on non-prod
 - Resources tagged to easily identify different environments
-- Modules versioned??
 
 
 ### Comparisons

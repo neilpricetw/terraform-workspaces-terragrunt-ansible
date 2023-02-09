@@ -19,6 +19,8 @@ Option 2: [Terraform Workspaces](option2-terraform-workspaces/)
 
 Option 3: [Terragrunt](option3-terragrunt/)
 
+Option 3b: [Terragrunt (with simplified folder structure and environment config)](option3b-terragrunt/)
+
 Option 4: [Terragrunt and Ansible](option4-terragrunt-and-ansible/)
 
 

@@ -1,4 +1,4 @@
-# Option 3: Terragrunt and Ansible
+# Option 4: Terragrunt and Ansible
 
 Creating and destroying the environments:
 

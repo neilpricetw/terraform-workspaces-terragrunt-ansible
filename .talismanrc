@@ -7,28 +7,6 @@ fileignoreconfig:
   checksum: bbad27105c865f105574103450b2c7320dc92b8585b35ad6bf5c2fd4118c0a37
 - filename: option1-terraform-tfvars/backend.tf
   checksum: 4210ca17f6697b64618f110288695a37fc4127e9033ea318f5e00193cb00d695
-- filename: option3-terragrunt/non-prod/us-east-1/dev/env.hcl
-  checksum: c3212db05a8011959c0e803c243bc07602a2a31b80e99a5c643b5469865d75d9
-- filename: option3-terragrunt/non-prod/us-east-1/test/env.hcl
-  checksum: 4cde49bc87a0c2e0ecc899cd3b18b43e75908b702457378918bc539f83d5d571
-- filename: option3-terragrunt/non-prod/us-east-1/uat/env.hcl
-  checksum: 20d20fce4042e9d818dcca155392c0ee76cae6da58db663d5f2e28f60ace373b
-- filename: option3-terragrunt/non-prod/us-east-2/dr/env.hcl
-  checksum: e46d647c8f41f02904e5abb099bc6748e84131c91148d26c68f142295a3960b2
-- filename: option3-terragrunt/prod/us-east-1/prod/env.hcl
-  checksum: b37ed9fc91d94c8c93d05766c5960b14f9dacb6b85cc2e3f73bd9b7493bd35c5
-- filename: option3-terragrunt/backend.tf
-  checksum: ec90c8beb417a6fccb2547907eae3320e0bd9c19c3e8dcd0be8f3a64eb011802
-- filename: option3-terragrunt/non-prod/us-east-1/dev/backend.tf
-  checksum: 6f90299c1473264889fd95b6851f1b0f7737b67d4c21cdc774b982eb7d07ba28
-- filename: option3-terragrunt/non-prod/us-east-2/dr/backend.tf
-  checksum: 758daadae1d36010a94da7acaba6a5a37d2ec05ed6342e56a50ea31615d588f1
-- filename: option3-terragrunt/non-prod/us-east-1/test/backend.tf
-  checksum: f0a0c0aaacce58c22870a1ebc7d4a3a9299421b54a1b1ec7c2d7cc9ade98b879
-- filename: option3-terragrunt/prod/us-east-1/prod/backend.tf
-  checksum: a6aa68ed9ca834807408db4c197a40fd8302984139ff5e18b3fe04daa5dd4149
-- filename: option3-terragrunt/non-prod/us-east-1/uat/backend.tf
-  checksum: 82bd23f7b07621add0fd94d4607ff12c29aac5cc454ddac42aa851dc125da1c3
 - filename: option2-terraform-workspaces/backend.tf
   checksum: b464d856ed45c79ceaf4cca4d5a05d2c1d68de62ae8380ee59186689978ceac1  
 - filename: option4-terragrunt-and-ansible/ansible/group_vars/env_dev.yaml
@@ -43,6 +21,16 @@ fileignoreconfig:
   checksum: 84a6749693282b1d39e533aae299f406d1da2616704fb8371e0728cc3ee86ce2
 - filename: option4-terragrunt-and-ansible/ansible/roles/scaffold_environment/templates/env.j2
   checksum: 965d9d193cd1bcc7692c21bc0a9c77090c3072612a614c734ef500e030e7fe0d  
+- filename: option3b-terragrunt/dev/env.hcl
+  checksum: b96bbb81ab6b4ddfa7fbeadc9a4e6c2af37123a8c5770e5c4af90aad0cc0b636
+- filename: option3b-terragrunt/dr/env.hcl
+  checksum: b9bf147a476ddb3d28f9e4190d190cdf3fb6947b59a0547f199d13156669d996
+- filename: option3b-terragrunt/prod/env.hcl
+  checksum: 8227acc7f5cb5be365d42ad486b1b116aeaa6a399d1890130de16468e8afa884
+- filename: option3b-terragrunt/test/env.hcl
+  checksum: 31ac4ef65e307a692e547432e64f7ab7c84aed5493ac4c7ed24e3470f35501a5
+- filename: option3b-terragrunt/uat/env.hcl
+  checksum: 792d874c54bc7aa3a0e78910ed2213dfa03a5c15c90d558d8f5862a7a86efd49  
 allowed_patterns:
 -     key =
 - password

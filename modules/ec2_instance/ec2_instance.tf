@@ -37,8 +37,8 @@ resource "aws_instance" "ec2_instance" {
   instance_type          = var.ec2_instance_type
   subnet_id              = var.subnet_public_1_id
   vpc_security_group_ids = ["${aws_security_group.ec2.id}"]
-  iam_instance_profile   = aws_iam_instance_profile.ec2_profile.name 
-  user_data              = templatefile("${path.module}/templates/ec2_userdata.tpl", {
+  iam_instance_profile   = aws_iam_instance_profile.ec2_profile.name
+  user_data = templatefile("${path.module}/templates/ec2_userdata.tpl", {
     data = "foo+bar"
   })
 
@@ -52,7 +52,7 @@ resource "aws_instance" "ec2_instance" {
 
 
 resource "aws_security_group" "ec2" {
-  name = format("%s-ec2-sg", var.prefix)
+  name   = format("%s-ec2-sg", var.prefix)
   vpc_id = var.vpc_id
 
   ingress {
@@ -61,7 +61,7 @@ resource "aws_security_group" "ec2" {
     to_port     = 80
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
-  }  
+  }
 
   egress {
     from_port   = 0

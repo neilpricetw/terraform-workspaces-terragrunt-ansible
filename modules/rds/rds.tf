@@ -25,7 +25,7 @@ resource "random_string" "db-password" {
   special = false
 }
 
-resource "aws_db_instance" "database" {   
+resource "aws_db_instance" "database" {
   allocated_storage      = 10
   engine                 = "postgres"
   engine_version         = 13
@@ -41,18 +41,18 @@ resource "aws_db_instance" "database" {
 }
 
 
-resource "aws_db_subnet_group" "RDS_subnet_grp" { 
-  subnet_ids = ["${var.subnet_private_1_id}", "${var.subnet_private_2_id}"] 
+resource "aws_db_subnet_group" "RDS_subnet_grp" {
+  subnet_ids = ["${var.subnet_private_1_id}", "${var.subnet_private_2_id}"]
 }
 
 
 resource "aws_security_group" "rds" {
-  name = "rds-sg"
+  name   = "rds-sg"
   vpc_id = var.vpc_id
   ingress {
-    from_port       = 3306
-    to_port         = 3306
-    protocol        = "tcp"
+    from_port   = 3306
+    to_port     = 3306
+    protocol    = "tcp"
     cidr_blocks = ["${var.vpc_cidr}"]
   }
 

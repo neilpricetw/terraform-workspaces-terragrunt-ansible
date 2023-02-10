@@ -26,14 +26,14 @@ variable "region" {
   type = string
 }
 
-variable "tech_owner" { 
-    type = string 
+variable "tech_owner" {
+  type = string
 }
 
-variable "environment" { 
-    type = string 
+variable "environment" {
+  type = string
 }
 
-variable "environment_owner" { 
-    type = string 
+variable "environment_owner" {
+  type = string
 }

@@ -18,9 +18,9 @@ data "aws_iam_policy_document" "bucket_policy" {
 
   statement {
     principals {
-	  type = "*"
-	  identifiers = ["*"]
-	}
+      type        = "*"
+      identifiers = ["*"]
+    }
 
     actions = [
       "s3:GetObject",
@@ -33,20 +33,20 @@ data "aws_iam_policy_document" "bucket_policy" {
     ]
 
     condition {
-      test = "IpAddress"
+      test     = "IpAddress"
       variable = "aws:SourceIp"
-      values = var.allowed_ips
+      values   = var.allowed_ips
     }
   }
 }
 
 
 locals {
-  is_prod = lower(var.environment) == "prod" 
+  is_prod = lower(var.environment) == "prod"
 }
 
 resource "aws_s3_bucket_lifecycle_configuration" "bucket-lifecycle" {
-  count           = local.is_prod ? 1 : 0
+  count  = local.is_prod ? 1 : 0
   bucket = aws_s3_bucket.bucket.bucket
 
   rule {

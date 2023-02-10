@@ -6,13 +6,13 @@ resource "aws_iam_policy" "ec2_policy" {
     Statement = [
       {
         Action = [
-          "s3:Get*", 
+          "s3:Get*",
           "s3:Put*",
           "s3:List*"
         ]
         Effect   = "Allow"
         Resource = format("arn:aws:s3:::%s/*", var.s3_bucket_name)
-      }         
+      }
     ]
   })
 }
@@ -39,7 +39,7 @@ resource "aws_iam_instance_profile" "ec2_profile" {
 }
 
 resource "aws_iam_policy_attachment" "ec2_policy_role" {
-  name = "ec2-policy-attachment"
-  roles = [aws_iam_role.ec2_role.name]
-  policy_arn = aws_iam_policy.ec2_policy.arn  
+  name       = "ec2-policy-attachment"
+  roles      = [aws_iam_role.ec2_role.name]
+  policy_arn = aws_iam_policy.ec2_policy.arn
 }

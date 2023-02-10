@@ -17,6 +17,8 @@ Option 1: [Terrafrom TFVars](option1-terraform-tfvars/)
 
 Option 2: [Terraform Workspaces](option2-terraform-workspaces/)
 
+Option 2b: [Terraform Workspaces with autovars](option2b-terraform-workspaces-with-autovars)
+
 Option 3: [Terragrunt](option3-terragrunt/)
 
 Option 3b: [Terragrunt (with simplified folder structure and environment config)](option3b-terragrunt/)

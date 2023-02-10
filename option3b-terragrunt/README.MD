@@ -5,8 +5,10 @@ This is a variation of option3 without the extra folders and the region and acco
 Creating and destroying the environments:
 
 
+
 ### Dev 
 ```
+export REGION="us-east-1" (or other)
 cd dev
 terragrunt init
 terragrunt run-all plan
@@ -17,6 +19,7 @@ terraform run-all destroy  --terragrunt-non-interactive
 
 ### Test 
 ```
+export REGION="us-east-1" (or other)
 cd test
 terragrunt init
 terragrunt run-all plan
@@ -27,6 +30,7 @@ terraform run-all destroy  --terragrunt-non-interactive
 
 ### Uat
 ```
+export REGION="us-east-1" (or other)
 cd uat
 terragrunt init
 terragrunt run-all plan
@@ -37,6 +41,7 @@ terraform run-all destroy  --terragrunt-non-interactive
 
 ### DR
 ```
+export REGION="us-east-1" (or other)
 cd dr
 terragrunt init
 terragrunt run-all plan
@@ -47,6 +52,7 @@ terraform run-all destroy  --terragrunt-non-interactive
 
 ### Prod 
 ```
+export REGION="us-east-1" (or other)
 cd prod
 terragrunt init
 terragrunt run-all plan

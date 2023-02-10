@@ -1,5 +1,5 @@
-locals {
-  common_vars = read_terragrunt_config(find_in_parent_folders("common_vars.hcl"))
+locals{
+  region = get_env("REGION")
 }
 
 remote_state {
@@ -17,16 +17,36 @@ remote_state {
   }
 }
 
-inputs = merge(
-  local.common_vars.inputs,
-)
-
 generate "provider" {
   path      = "provider.tf"
   if_exists = "overwrite_terragrunt"
   contents  = <<EOF
-provider "aws" {
-  region = "us-east-1"
-}
+  provider "aws" {
+    region = "${local.region}"
+  }
 EOF
+}
+
+inputs = {
+  region = local.region
+}
+
+terraform {
+  source = "${find_in_parent_folders("modules-rework")}"
+
+
+  extra_arguments "vars"{
+    commands = [
+      "apply",
+      "plan",
+      "import",
+      "push",
+      "refresh"
+    ]
+
+    optional_var_files = [
+      "${find_in_parent_folders("option3b-terragrunt")}/common_vars.tfvars",
+      "${find_in_parent_folders("option3b-terragrunt")}/test/env.tfvars",
+    ]
+  }
 }

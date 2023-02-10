@@ -4,19 +4,16 @@ variable "region" {
 }
 
 variable "prefix" {
-  type    = string
-  default = "terraform-workspaces-terragrunt-ansible-comparison"
+  type = string
 }
 
 variable "tech_owner" {
-  type    = string
-  default = "neil.price@thoughtworks.com.au"
+  type = string
 }
 
 variable "base_workspace" {
   description = "Workspace config to use as a base for all other workspaces"
   type        = string
-  default     = "prod"
 }
 
 variable "configuration" {

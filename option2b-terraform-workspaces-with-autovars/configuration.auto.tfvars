@@ -26,11 +26,12 @@ configuration = {
     environment_owner = "uat-testers@mycompany.com.au"
 
     // Network
-    vpc_cidr                 = "10.2.0.0/16"
-    subnet1_cidr             = "10.2.1.0/24"
-    subnet2_cidr             = "10.2.2.0/24"
-    subnet3_cidr             = "10.2.3.0/24"
-    subnet4_cidr             = "10.2.4.0/24"
+    vpc_cidr     = "10.2.0.0/16"
+    subnet1_cidr = "10.2.1.0/24"
+    subnet2_cidr = "10.2.2.0/24"
+    subnet3_cidr = "10.2.3.0/24"
+    subnet4_cidr = "10.2.4.0/24"
+
     allowed_ips_to_s3_bucket = ["1.1.1.1", "2.2.2.2"]
   }
   test = {

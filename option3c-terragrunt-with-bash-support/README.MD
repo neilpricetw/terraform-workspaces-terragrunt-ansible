@@ -1,17 +1,25 @@
-# Option 3b: Terragrunt with bash support
+# Option 3c: Terragrunt with bash support
 
 This is a DRY focussed terragrunt option. With bash setting up the environment and region we can reduce the code to one 
 terragrunt.hcl file and one var file for each environment. The script also verifies the values we pass in are valid.
-This example also uses terraform workspaces to manage the environment, but it could be done with a variable as well.
-The main benefit in using workspaces is that we are passing all the variables to submodules which could easily be 
-modified but the workspace won't be changed.
 
-Variations/Enhancements:
-If there are separate variables per region, we could introduce env directories again with regionally named files.
-The bash script can be extended to do account verification and other safety pre-deploy steps.
+This example also uses terraform workspaces to manage the environment instead of a variable as a minor improvement.
+If we use a variable, we would have an input for the env:
+  - in the script {./deploy.sh {COMMAND} {ENV}...} 
+  - in the vars/env file for each environment (to pass it to the main.tf in modules-option3c)  {environment = dev} 
+  - in the main.tf (to pass to each of the submodules) {env = var.environment}
+
+This leads to a lot of places the env can be modified part way during the deployment
+By using terraform workspaces we can set it in the original script invocation and use the workspace to access it
+which will reduce the number of times it is passed on.
+It is currently only used in the module, but can also be used in backend configuration, providers, etc
+
+### Variations/Enhancements:
+ - If there are separate variables per region, we could introduce env directories again with regionally named files.
+ - The bash script can be extended to do account verification and other safety pre-deploy steps.
 
 
-Creating and destroying the environments:
+## Creating and destroying the environments:
 
 ### Script args
 ```
@@ -46,9 +54,9 @@ terragrunt {COMMAND}
 
 ### DR
 ```
-./deploy.sh apply dr us-east-1
+./deploy.sh apply dr us-east-2
 
-./deploy.sh destroy dr us-east-1
+./deploy.sh destroy dr us-east-2
 ```
 
 ### Prod 

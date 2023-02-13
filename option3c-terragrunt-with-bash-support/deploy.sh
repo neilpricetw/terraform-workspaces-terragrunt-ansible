@@ -1,6 +1,13 @@
 #!/bin/sh
 set -e
 
+# Usage:
+#   ./deploy.sh {COMMAND} {ENV} {REGION}
+#
+# Example:
+#   ./deploy.sh plan dev us-east-1
+
+
 run_terragrunt(){
   case $1 in
     apply)

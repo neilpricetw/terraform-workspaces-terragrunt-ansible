@@ -23,6 +23,8 @@ Option 3: [Terragrunt](option3-terragrunt/)
 
 Option 3b: [Terragrunt (with simplified folder structure and environment config)](option3b-terragrunt/)
 
+Option 3c: [Terragrunt with bash support](option3c-terragrunt-with-bash-support/)
+
 Option 4: [Terragrunt and Ansible](option4-terragrunt-and-ansible/)
 
 

@@ -1,6 +1,6 @@
 # Option 3b: Terragrunt with bash support
 
-This is a DRY focussed option 3. With bash setting up the environment and region we can reduce the code to one 
+This is a DRY focussed terragrunt option. With bash setting up the environment and region we can reduce the code to one 
 terragrunt.hcl file and one var file for each environment. The script also verifies the values we pass in are valid.
 This example also uses terraform workspaces to manage the environment, but it could be done with a variable as well.
 The main benefit in using workspaces is that we are passing all the variables to submodules which could easily be 
@@ -20,7 +20,7 @@ Creating and destroying the environments:
 (script executes following)
 export TF_WORKSPACE=$env
 terragrunt init
-terragrunt apply
+terragrunt {COMMAND}
 ```
 
 ### Dev 

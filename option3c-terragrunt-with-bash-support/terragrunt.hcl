@@ -10,7 +10,7 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
   config = {
-    bucket = "jack-ccf-terraform-backend"
+    bucket = "ccf-terraform-backend"
 
     key = "terraform-workspaces-terragrunt-ansible/${path_relative_to_include()}/terraform.tfstate"
     region         = "ap-southeast-2"

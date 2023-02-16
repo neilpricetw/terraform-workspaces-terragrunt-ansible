@@ -1,6 +1,6 @@
 # Comparing Options for Handling Environment Config in Terraform and remaining DRY
 
-There are multiple ways to configure environment settings in Terraform.  This repo evaluates multiple possible methods with an aim of writing [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) easy to maintain code.
+There are multiple ways to configure environment settings in Terraform.  This repo evaluates initial four but it has branched out to multiple possible methods with an aim of writing [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) easy to maintain code.
 
 
 ## Example Solution Requirements

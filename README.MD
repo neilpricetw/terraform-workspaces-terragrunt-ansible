@@ -1,9 +1,9 @@
 # Comparing Options for Handling Environment Config in Terraform and remaining DRY
 
-There are multiple ways to configure environment settings in Terraform.  This repo evaluates four possible methods with an aim of writing [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) easy to maintain code.
+There are multiple ways to configure environment settings in Terraform.  This repo evaluates multiple possible methods with an aim of writing [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) easy to maintain code.
 
 
-## Solution Requirements
+## Example Solution Requirements
 
 - 1 solution consisting of EC2 web frontend connecting to RDS Postgres backend and an S3 bucket
 - 4 environments in main region and a DR in a different region

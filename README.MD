@@ -21,9 +21,11 @@ Option 2b: [Terraform Workspaces with autovars](option2b-terraform-workspaces-wi
 
 Option 3: [Terragrunt](option3-terragrunt/)
 
-Option 3b: [Terragrunt (with simplified folder structure and environment config)](option3b-terragrunt/)
+Option 3b: [Terragrunt with simplified folder structure and environment config](option3b-terragrunt/)
 
-Option 3c: [Terragrunt with bash support](option3c-terragrunt-with-bash-support/)
+Option 3c: [Terragrunt with bash support and env var usage](option3c-terragrunt-with-bash-support/)
+
+Option 3d: [Terragrunt with centralised hcl module files](option3d-terragrunt/)
 
 Option 4: [Terragrunt and Ansible](option4-terragrunt-and-ansible/)
 

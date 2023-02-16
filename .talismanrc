@@ -31,6 +31,16 @@ fileignoreconfig:
   checksum: 31ac4ef65e307a692e547432e64f7ab7c84aed5493ac4c7ed24e3470f35501a5
 - filename: option3b-terragrunt/uat/env.hcl
   checksum: 792d874c54bc7aa3a0e78910ed2213dfa03a5c15c90d558d8f5862a7a86efd49  
+- filename: option3d-terragrunt/non-prod/us-east-1/dev/env.hcl
+  checksum: df05aac1d93c040cb23fe3f5f83e3673894b149f098960bbf91c5cb3952c9972
+- filename: option3d-terragrunt/non-prod/us-east-1/test/env.hcl
+  checksum: bce369e254d83f64d6653b1d082a9db5a806c5f656b1ede8b87a0f5c73f0f877
+- filename: option3d-terragrunt/non-prod/us-east-1/uat/env.hcl
+  checksum: f311d1e788421f3d9aff6c9ea80e0742c393eaf830c3d3e7e761c24c0b7eecc3
+- filename: option3d-terragrunt/non-prod/us-east-2/dr/env.hcl
+  checksum: a465e3ef23cc7527bdd641182bf096d947a619676ce90ac7f6ed5cde87e5b564
+- filename: option3d-terragrunt/prod/us-east-1/prod/env.hcl
+  checksum: dbaf6ecc27bafaf37354358058a5dba101ea1a3ddb10fcbe0ef15fd8474bd077  
 allowed_patterns:
 -     key =
 - password

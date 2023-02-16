@@ -72,7 +72,10 @@ terragrunt {COMMAND}
     - Easier to see what is deployed where
     - Can configure separate backends
     - Can configure separate versions
+    - Great for single solutions / teams
 - Cons
     - Need an extra tool outside of Terraform to learn
     - Not natively supported with Terraform Cloud
     - Can be difficult to comprehend with Bash executing Terragrunt executing Terraform
+    - Difficult to use if multiple teams use the same module pool as it's all or nothing or complex conditionals in the hcl file at the root of the modules folder
+    - The use of env vars means you could have issues deploying using the same CI/CD infrastructure, must use containers to get around this

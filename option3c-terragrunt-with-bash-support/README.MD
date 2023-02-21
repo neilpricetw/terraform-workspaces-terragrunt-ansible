@@ -73,6 +73,7 @@ terragrunt {COMMAND}
     - Can configure separate backends
     - Can configure separate versions
     - Great for single solutions / teams
+    - Terragrunt deploys the modules in correct order; it can also run deployments in parallel if there are no dependencies
 - Cons
     - Need an extra tool outside of Terraform to learn
     - Not natively supported with Terraform Cloud

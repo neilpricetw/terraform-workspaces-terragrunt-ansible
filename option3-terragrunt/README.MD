@@ -57,7 +57,8 @@ terraform run-all destroy  --terragrunt-non-interactive
 - Pros 
     - Easier to see what is deployed where
     - Can configure separate backends
-    - Can configure separate versions
+    - Can configure separate versions\
+    - Terragrunt deploys the modules in correct order; it can also run deployments in parallel if there are no dependencies    
 - Cons
     - Need an extra tool outside of Terraform to learn
     - Duplication of folders and files

@@ -64,6 +64,7 @@ terraform run-all destroy  --terragrunt-non-interactive
     - Config for each environment easy to find
     - Adds greater flexibility with if else statement capabilities
     - Less duplication when using multiple providers
+    - Terragrunt deploys the modules in correct order; it can also run deployments in parallel if there are no dependencies    
 - Cons
     - Need an extra tool outside of Terraform to learn
     - Could potentially add greater complexity to understand the code base

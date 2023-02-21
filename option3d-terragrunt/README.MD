@@ -59,6 +59,7 @@ terraform run-all destroy  --terragrunt-non-interactive
     - Can configure separate backends
     - Can configure separate versions
     - the module hcls are centralised reducing duplication
+    - Terragrunt deploys the modules in correct order; it can also run deployments in parallel if there are no dependencies
 - Cons
     - Need an extra tool outside of Terraform to learn
     - Config spread out across multiple poorly named files (terragrunt.hcl)
